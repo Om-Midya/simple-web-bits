@@ -6,6 +6,7 @@ const greetings = [
 ];
 
 const messageEl = document.getElementById('message');
+const timestampEl = document.getElementById('timestamp');
 const refreshBtn = document.getElementById('refresh');
 
 function randomGreeting() {
@@ -15,6 +16,7 @@ function randomGreeting() {
 
 function updateGreeting() {
   messageEl.textContent = randomGreeting();
+  timestampEl.textContent = `Last refreshed at ${new Date().toLocaleTimeString()}.`;
 }
 
 refreshBtn.addEventListener('click', updateGreeting);
